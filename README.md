@@ -1,0 +1,2 @@
+# QrcodeReaderSample
+QR Code Reader 
