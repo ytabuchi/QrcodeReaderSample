@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="QrcodeReader.FormPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Form Page">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!--  Category  -->
+            <RowDefinition Height="Auto" />
+            <!--  Machine  -->
+            <RowDefinition Height="Auto" />
+            <!--  SerialNumber  -->
+            <RowDefinition Height="Auto" />
+            <!--  LastName  -->
+            <RowDefinition Height="Auto" />
+            <!--  FirstName  -->
+            <RowDefinition Height="Auto" />
+            <!--  Email  -->
+            <RowDefinition Height="Auto" />
+            <!--  Telephone  -->
+            <RowDefinition Height="Auto" />
+            <!--  Comment  -->
+            <RowDefinition Height="*" />
+            <!--  Buttons  -->
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Text="Category"
+               VerticalTextAlignment="Center" />
+        <Entry x:Name="Category"
+               Grid.Row="0"
+               Grid.Column="1" />
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="Machine"
+               VerticalTextAlignment="Center" />
+        <Entry x:Name="Machine"
+               Grid.Row="1"
+               Grid.Column="1" />
+
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Text="Serial Number"
+               VerticalTextAlignment="Center" />
+        <Entry x:Name="SerialNumber"
+               Grid.Row="2"
+               Grid.Column="1" />
+
+        <Label Grid.Row="3"
+               Grid.Column="0"
+               Text="Last Name"
+               VerticalTextAlignment="Center" />
+        <Entry x:Name="LastName"
+               Grid.Row="3"
+               Grid.Column="1" />
+
+        <Label Grid.Row="4"
+               Grid.Column="0"
+               Text="First Name"
+               VerticalTextAlignment="Center" />
+        <Entry x:Name="FirstName"
+               Grid.Row="4"
+               Grid.Column="1" />
+
+        <Label Grid.Row="5"
+               Grid.Column="0"
+               Text="Email" />
+        <Entry x:Name="Email"
+               Grid.Row="5"
+               Grid.Column="1" />
+
+        <Label Grid.Row="6"
+               Grid.Column="0"
+               Text="Telephone" />
+        <Entry x:Name="Telephone"
+               Grid.Row="6"
+               Grid.Column="1" />
+
+        <Label Grid.Row="7"
+               Grid.Column="0"
+               Text="Comment" />
+        <Editor x:Name="Comment"
+                Grid.Row="7"
+                Grid.Column="1" />
+
+        <StackLayout Grid.Row="8"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="2"
+                     Orientation="Horizontal">
+            <Button Clicked="SubmitClicked" Text="Submit" />
+            <Button Clicked="ClearClicked" Text="Clear" />
+        </StackLayout>
+
+    </Grid>
+</ContentPage>
