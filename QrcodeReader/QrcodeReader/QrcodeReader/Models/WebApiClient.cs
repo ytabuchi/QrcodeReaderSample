@@ -65,7 +65,7 @@ namespace QrcodeReader.Models
                 {
                     var content = new StringContent(JsonConvert.SerializeObject(formData));
                     content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                    var response = await client.PostAsync("api/People", content);
+                    var response = await client.PostAsync("api/xxx", content);
                     response.EnsureSuccessStatusCode();
 
                     var result = await response.Content.ReadAsStringAsync();

@@ -7,7 +7,7 @@ namespace QrcodeReader.Models
 {
     public class FormData
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Category { get; set; }
         public string Machine { get; set; }
         public string SerialNumber { get; set; }

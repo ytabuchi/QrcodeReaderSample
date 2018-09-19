@@ -23,7 +23,7 @@ namespace QrcodeReader
                 _formData = formData;
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 
@@ -31,7 +31,7 @@ namespace QrcodeReader
             Machine.Text = _formData.Machine;
             SerialNumber.Text = _formData.SerialNumber;
 
-            var savedData = await FileSystemClient.Instance.ReadFile();
+            var savedData = FileSystemClient.Instance.ReadFile();
             if (savedData != null)
             {
                 LastName.Text = savedData.LastName;
@@ -59,10 +59,19 @@ namespace QrcodeReader
             //var result = await WebApiClient.Instance.PostFormDataAsync(sendData);
             var result = 1;
 
+            var history = new SendHistory
+            {
+                DataId = sendData.Id,
+                IsSent = result,
+                SentDate = DateTimeOffset.Now
+            };
+
+            var client = new SQLiteClient();
+            client.AddData(history);
+
             if (result != 0)
             {
                 FileSystemClient.Instance.WriteFile(sendData);
-
                 await DisplayAlert("Done", "Form data is sent.", "OK");
             }
         }
