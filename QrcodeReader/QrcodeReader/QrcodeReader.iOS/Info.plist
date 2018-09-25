@@ -50,5 +50,7 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>XFApp</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app use camera for scanning.</string>
 </dict>
 </plist>

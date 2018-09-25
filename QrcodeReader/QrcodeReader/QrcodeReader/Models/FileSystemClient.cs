@@ -21,6 +21,7 @@ namespace QrcodeReader.Models
 
         public void WriteFile(FormData formData)
         {
+            // JSONをシリアライズ
             var settings = new JsonSerializerSettings
             {
                 // メンバ名をキャメルケースで出力するオプション
@@ -35,7 +36,7 @@ namespace QrcodeReader.Models
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Debug.WriteLine(ex);
                 throw;
             }
 
