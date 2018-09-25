@@ -8,9 +8,8 @@ using QrcodeReader.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace QrcodeReader
+namespace QrcodeReader.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FormPage : ContentPage
     {
         private FormData _formData = new FormData();
@@ -74,6 +73,11 @@ namespace QrcodeReader
                 FileSystemClient.Instance.WriteFile(sendData);
                 await DisplayAlert("Done", "Form data is sent.", "OK");
             }
+
+            client.ReadAllData();
+
+
+            await Navigation.PopAsync();
         }
 
         private void ClearClicked(object sender, EventArgs e)

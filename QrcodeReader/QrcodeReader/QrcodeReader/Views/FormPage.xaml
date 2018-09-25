@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Class="QrcodeReader.FormPage"
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="QrcodeReader.Views.FormPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Form Page">
@@ -71,21 +71,24 @@
 
         <Label Grid.Row="5"
                Grid.Column="0"
-               Text="Email" />
+               Text="Email"
+               VerticalTextAlignment="Center" />
         <Entry x:Name="Email"
                Grid.Row="5"
                Grid.Column="1" />
 
         <Label Grid.Row="6"
                Grid.Column="0"
-               Text="Telephone" />
+               Text="Telephone"
+               VerticalTextAlignment="Center" />
         <Entry x:Name="Telephone"
                Grid.Row="6"
                Grid.Column="1" />
 
         <Label Grid.Row="7"
                Grid.Column="0"
-               Text="Comment" />
+               Text="Comment"
+               VerticalTextAlignment="Center" />
         <Editor x:Name="Comment"
                 Grid.Row="7"
                 Grid.Column="1" />
@@ -94,8 +97,8 @@
                      Grid.Column="0"
                      Grid.ColumnSpan="2"
                      Orientation="Horizontal">
-            <Button Clicked="SubmitClicked" Text="Submit" />
-            <Button Clicked="ClearClicked" Text="Clear" />
+            <Button Clicked="SubmitClicked" Text="Submit" HorizontalOptions="FillAndExpand" />
+            <Button Clicked="ClearClicked" Text="Clear" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
 
     </Grid>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using Xamarin.Essentials;
 using SQLite;
-using SQLitePCL;
+using System.Collections.ObjectModel;
 
 namespace QrcodeReader.Models
 {
@@ -35,7 +35,7 @@ namespace QrcodeReader.Models
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Debug.WriteLine(ex);
                 throw;
             }
             finally
@@ -44,25 +44,26 @@ namespace QrcodeReader.Models
             }
         }
 
-        public void ReadAllData()
+        public List<SendHistory> ReadAllData()
         {
             var conn = new SQLiteConnection(_databasePath);
-            var query = conn.Table<SendHistory>().Where(v => v.SentDate >= DateTimeOffset.Now.AddDays(-7));
 
-            var result = query.ToList();
+            try
+            {
+                var query = conn.Table<SendHistory>();
 
-            foreach (var stock in result)
-                Debug.WriteLine("Data ID: " + stock.DataId);
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 
-    public class SendHistory
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public int DataId { get; set; }
-        public DateTimeOffset SentDate { get; set; }
-        public int IsSent { get; set; }
-    }
-    
 }
