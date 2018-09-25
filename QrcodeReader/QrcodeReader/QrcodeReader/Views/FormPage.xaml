@@ -3,9 +3,11 @@
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Form Page">
-    <Grid>
+    <Grid Padding="8" 
+          ColumnSpacing="10"
+          RowSpacing="6">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -91,7 +93,7 @@
                VerticalTextAlignment="Center" />
         <Editor x:Name="Comment"
                 Grid.Row="7"
-                Grid.Column="1" />
+                Grid.Column="1"/>
 
         <StackLayout Grid.Row="8"
                      Grid.Column="0"
